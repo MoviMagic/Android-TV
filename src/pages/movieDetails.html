@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Película - Moviplay TV</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../src/services/tmdbService.js" defer></script>
+    <script>
+        async function loadMovieDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tmdbId = urlParams.get('tmdbId');
+            const movie = await getMovieDetails(tmdbId);
+
+            document.getElementById('movie-title').textContent = movie.title;
+            document.getElementById('movie-description').textContent = movie.overview;
+            document.getElementById('movie-poster').src = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+            document.getElementById('movie-release').textContent = `Año: ${new Date(movie.release_date).getFullYear()}`;
+            document.getElementById('movie-rating').textContent = `Valoración: ${movie.vote_average}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadMovieDetails);
+    </script>
+</head>
+<body>
+    <div class="section">
+        <header>
+            <h1 id="movie-title"></h1>
+        </header>
+        <img id="movie-poster" alt="Poster de la película">
+        <p id="movie-release"></p>
+        <p id="movie-rating"></p>
+        <p id="movie-description"></p>
+        <div id="video-player"></div>
+    </div>
+</body>
+</html>

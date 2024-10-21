@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Curso - Moviplay TV</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../src/services/firebaseService.js" defer></script>
+    <script>
+        async function loadCourseDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const courseId = urlParams.get('courseId');
+            const course = await fetchCourseDetails(courseId);
+
+            document.getElementById('course-title').textContent = course.name;
+            document.getElementById('course-description').textContent = course.description;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCourseDetails);
+    </script>
+</head>
+<body>
+    <div class="section">
+        <header>
+            <h1 id="course-title"></h1>
+        </header>
+        <p id="course-description"></p>
+        <div id="video-player"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Canales - Moviplay TV</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../src/components/videoPlayer.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const streamUrl = urlParams.get('streamUrl');
+            initializeVideoPlayer(streamUrl);
+        });
+    </script>
+</head>
+<body>
+    <div id="video-player"></div>
+</body>
+</html>

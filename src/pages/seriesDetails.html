@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Serie - Moviplay TV</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <script src="../src/services/tmdbService.js" defer></script>
+    <script>
+        async function loadSeriesDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tmdbId = urlParams.get('tmdbId');
+            const series = await getSeriesDetails(tmdbId);
+
+            document.getElementById('series-title').textContent = series.name;
+            document.getElementById('series-description').textContent = series.overview;
+            document.getElementById('series-poster').src = `https://image.tmdb.org/t/p/w500/${series.poster_path}`;
+            document.getElementById('series-release').textContent = `Primera emisión: ${new Date(series.first_air_date).getFullYear()}`;
+            document.getElementById('series-rating').textContent = `Valoración: ${series.vote_average}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadSeriesDetails);
+    </script>
+</head>
+<body>
+    <div class="section">
+        <header>
+            <h1 id="series-title"></h1>
+        </header>
+        <img id="series-poster" alt="Poster de la serie">
+        <p id="series-release"></p>
+        <p id="series-rating"></p>
+        <p id="series-description"></p>
+        <div id="video-player"></div>
+    </div>
+</body>
+</html>
