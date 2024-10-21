@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moviplay TV</title>
+    <title>Moviplay TV - Streaming App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <img src="logo.png" alt="Moviplay TV Logo" class="logo">
-        <input type="text" placeholder="Buscar..." id="search">
+        <div class="navbar">
+            <button class="nav-btn" onclick="showSection('movies')">Películas</button>
+            <button class="nav-btn" onclick="showSection('series')">Series</button>
+            <button class="nav-btn" onclick="showSection('channels')">Canales Libres</button>
+            <button class="nav-btn" onclick="showSection('courses')">Cursos</button>
+        </div>
+        <input type="text" placeholder="Buscar..." id="search" onkeyup="searchContent()">
     </header>
-    <aside id="categories">
-        <ul>
-            <li>Todo el contenido</li>
-            <li>Películas</li>
-            <li>Series</li>
-            <li>Canales</li>
-        </ul>
-    </aside>
     <main id="content-display">
-        <!-- Los contenidos se cargarán aquí -->
+        <!-- Contenido se cargará dinámicamente aquí -->
     </main>
     <script src="app.js"></script>
 </body>
