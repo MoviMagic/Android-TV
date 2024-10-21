@@ -9,14 +9,15 @@
 <body>
     <header>
         <img src="logo.png" alt="Moviplay TV Logo" class="logo">
-        <div class="navbar">
-            <button class="nav-btn" onclick="showSection('movies')">Películas</button>
-            <button class="nav-btn" onclick="showSection('series')">Series</button>
-            <button class="nav-btn" onclick="showSection('channels')">Canales Libres</button>
-            <button class="nav-btn" onclick="showSection('courses')">Cursos</button>
-        </div>
-        <input type="text" placeholder="Buscar..." id="search" onkeyup="searchContent()">
     </header>
+    <aside id="menu">
+        <ul>
+            <li class="menu-item" onclick="showSection('movies')">Películas</li>
+            <li class="menu-item" onclick="showSection('series')">Series</li>
+            <li class="menu-item" onclick="showSection('channels')">Canales Libres</li>
+            <li class="menu-item" onclick="showSection('courses')">Cursos</li>
+        </ul>
+    </aside>
     <main id="content-display">
         <!-- Contenido se cargará dinámicamente aquí -->
     </main>

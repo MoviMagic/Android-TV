@@ -1,12 +1,12 @@
 // Configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyDhPRVu8n_pZQzJPVWNFlJonmj5KEYsF10",
-  authDomain: "movimagic.firebaseapp.com",
-  projectId: "movimagic",
-  storageBucket: "movimagic.appspot.com",
-  messagingSenderId: "518388279864",
-  appId: "1:518388279864:web:a6f699391ec5bb627c14cd",
-  measurementId: "G-GG65HJV2T6"
+    authDomain: "movimagic.firebaseapp.com",
+    projectId: "movimagic",
+    storageBucket: "movimagic.appspot.com",
+    messagingSenderId: "518388279864",
+    appId: "1:518388279864:web:a6f699391ec5bb627c14cd",
+    measurementId: "G-GG65HJV2T6"
 };
 
 // Inicializar Firebase
@@ -34,14 +34,6 @@ function showSection(section) {
     }
 }
 
-// Función para buscar contenido por título
-function searchContent() {
-    const query = document.getElementById("search").value.toLowerCase();
-    if (query) {
-        // Lógica de búsqueda y mostrar resultados
-    }
-}
-
 // Función para obtener contenido de Firestore
 async function fetchContentFromFirestore(collection) {
     const contentCollection = await db.collection(collection).orderBy("addedDate", "desc").get();
@@ -65,7 +57,6 @@ function displayContent(items, type) {
         contentDiv.innerHTML = `
             <img src="${item.posterUrl || 'default.jpg'}" alt="${item.title}">
             <h3>${item.title}</h3>
-            <p>Categorías: ${item.categories ? item.categories.join(", ") : 'N/A'}</p>
             <a href="${item.videoUrl}" target="_blank">Ver ${type === 'movies' ? 'Película' : type === 'series' ? 'Serie' : type === 'channels' ? 'Canal' : 'Curso'}</a>
         `;
         contentDisplay.appendChild(contentDiv);
