@@ -10,16 +10,13 @@
     <header>
         <img src="logo.png" alt="Moviplay TV Logo" class="logo">
     </header>
-    <aside id="menu">
-        <ul>
-            <li class="menu-item" onclick="showSection('movies')">Películas</li>
-            <li class="menu-item" onclick="showSection('series')">Series</li>
-            <li class="menu-item" onclick="showSection('channels')">Canales Libres</li>
-            <li class="menu-item" onclick="showSection('courses')">Cursos</li>
-        </ul>
-    </aside>
-    <main id="content-display">
-        <!-- Contenido se cargará dinámicamente aquí -->
+    <main>
+        <div class="button-container">
+            <button class="section-btn" onclick="showSection('movies')">Películas</button>
+            <button class="section-btn" onclick="showSection('series')">Series</button>
+            <button class="section-btn" onclick="showSection('channels')">Canales Libres</button>
+            <button class="section-btn" onclick="showSection('courses')">Cursos</button>
+        </div>
     </main>
     <script src="app.js"></script>
 </body>
