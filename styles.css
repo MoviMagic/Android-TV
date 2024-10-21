@@ -1,0 +1,51 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #222;
+}
+
+.logo {
+    width: 100px;
+}
+
+#search {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#categories {
+    width: 200px;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+#categories ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#categories li {
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#categories li:hover {
+    background-color: #444;
+}
+
+#content-display {
+    margin-left: 220px;
+    padding: 10px;
+}
