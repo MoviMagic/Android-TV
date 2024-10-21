@@ -27,5 +27,5 @@ function createNavbar() {
 }
 
 function navigateToPage(page) {
-    window.location.href = `../pages/${page}`;
+    window.location.href = `../src/pages/${page}`;
 }

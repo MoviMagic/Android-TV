@@ -14,7 +14,7 @@ function createMovieCard(movie) {
     card.appendChild(title);
 
     card.addEventListener('click', () => {
-        window.location.href = `../pages/movieDetails.html?tmdbId=${movie.tmdbId}`;
+        window.location.href = `../src/pages/movieDetails.html?tmdbId=${movie.tmdbId}`;
     });
 
     return card;

@@ -1,4 +1,4 @@
-// Configuración de Firebase
+// Inicialización de Firebase (después de cargar los scripts de Firebase desde el CDN)
 const firebaseConfig = {
     apiKey: "AIzaSyDhPRVu8n_pZQzJPVWNFlJonmj5KEYsF10",
     authDomain: "movimagic.firebaseapp.com",
@@ -9,4 +9,6 @@ const firebaseConfig = {
     measurementId: "G-GG65HJV2T6"
 };
 
+// Asegúrate de que Firebase esté correctamente importado antes de esta línea
 firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();

@@ -1,6 +1,4 @@
 // Funciones para interactuar con Firebase Firestore
-const db = firebase.firestore();
-
 async function fetchMovies() {
     try {
         const moviesCollection = await db.collection('movies').get();
